@@ -16,13 +16,14 @@
 
  <!-- Compile the java code in ${src.dir} into ${build.dir}-->
  <target name="compile" depends="init" description="compile java sources">
- <javac srcdir="${source.dir}" destdir="${doc.dir}"/>
+ <javac srcdir="${source.dir}" destdir="${build.dir}"/>
  	<classpath refid="junit.class.path"/>
  </target>
 	<!-- Generate javadocs for current project into ${doc.dir} -->
 	 <target name="doc" depends="init" description="generate documentation">
 	 <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
  </target>
+	
 	 <!-- Delete the build & doc directories and Emacs backup (*~) files -->
  <target name="clean" description="tidy up the workspace">
 	 <delete dir="${build.dir}"/>
